@@ -67,6 +67,10 @@ public class Professor {
 		setDegree(newDegree);
 	}
 	
-	
+	@Override //var nerakstit bet tapat parrakstis klases toString funkciju
+	public String toString() {
+		String result = professorID + ": " + name + " " + surname + " (" + degree + ")"; 
+		return result;
+	}
 }
 
