@@ -29,7 +29,7 @@ public class Student {
 	}
 	
 	//set ==============
-	public void setStrudentID() {
+	public void setStudentID() {
 		studentID = counter;
 		counter++;
 	}
@@ -42,7 +42,7 @@ public class Student {
 		}
 	}
 	public void setSurname(String newSurname) {
-		if((newSurname != null) && (!newSurname.isEmpty()) && (newSurname.matches("[A-Z]{1}[a-z]{2,20}"))) {
+		if((newSurname != null) && (!newSurname.isEmpty()) && (newSurname.matches("[A-Z]{1}[a-z]{2,20}([-]{1}[A-Z]{1}[a-z]{2,20})?"))) {
 			surname = newSurname;
 		}
 		else {
@@ -51,7 +51,7 @@ public class Student {
 		
 	}
 	public void setPersonCode(String newPersonCode){
-		if ((newPersonCode.length() == 11) && (newPersonCode != null) && (newPersonCode.matches("[1-9]{5}[-]{1}[1-9]{5}"))) {
+		if ((newPersonCode.length() == 12) && (newPersonCode != null) && (newPersonCode.matches("[1-9]{6}[-]{1}[1-9]{5}"))) {
 			personCode = newPersonCode;
 		}
 		else {
@@ -60,9 +60,19 @@ public class Student {
 	}
 	
 	//bezargumenta konst
-	Public Student();
+	public Student() {
+		setStudentID();
+		setName("Janis");
+		setSurname("Kalnins");
+		setPersonCode("240051-21441");
+	};
 	//argumenta konst
-	Public Student
+	public Student(String newName, String newSurname, String newPersonCode) {
+		setStudentID();
+		setName(newName);
+		setSurname(newSurname);
+		setPersonCode(newPersonCode);
+	}
 	//toString funkcija
 	//visas parejas funkcijas pec nepieciesamibas
 }
